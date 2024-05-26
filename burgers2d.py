@@ -11,7 +11,7 @@ dy = 2 / (ny - 1)
 sigma = .0009
 nu = 0.01
 dt = sigma * dx * dy / nu
-nt = runtime/dt
+nt = int(runtime/dt)
 
 u = np.ones((ny, nx)) 
 v = np.ones((ny, nx))
@@ -60,3 +60,5 @@ ax.plot_surface(X, Y, u, cmap=cm.viridis, rstride=1, cstride=1)
 ax.plot_surface(X, Y, v, cmap=cm.viridis, rstride=1, cstride=1)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
+
+fig.show()
