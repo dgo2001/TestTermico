@@ -16,12 +16,12 @@ ufunc = lambdify((t, x, nu), u) # Crea una funcion "u" llamable (numericamente) 
 
 nx = 101 # Numero de steps en el espacio
 nt = 100 # Numero de steps en tiempo
-dx = 2 * numpy.pi / (nx - 1) # Step size
+dx = 2 * np.pi / (nx - 1) # Step size
 nu = .07 # Termino de difusion
 dt = dx * nu # Definir dt como funcion de dx asegura estabilidad de la solucion
 
-x = numpy.linspace(0, 2 * numpy.pi, nx)
-un = numpy.empty(nx)
+x = np.linspace(0, 2*np.pi, nx)
+un = np.empty(nx)
 t = 0
 
-u = numpy.asarray([ufunc(t, x0, nu) for x0 in x]) # Condiciones iniciales de velocidad, funcion sawtooth
+u = np.asarray([ufunc(t, x0, nu) for x0 in x]) # Condiciones iniciales de velocidad, funcion sawtooth
